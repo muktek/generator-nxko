@@ -29,7 +29,7 @@ module.exports = class extends Generator  {
       'cookie-parser',
       'objection',
       'knex',
-      'express'
+      'express',
       'bcryptjs'], { 'save': true, 'save-exact': true });
   }
 
