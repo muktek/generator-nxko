@@ -77,8 +77,8 @@ module.exports = class extends Generator  {
 
 
 
-    const authRouterSrc = this.templatePath('./routes/authRouter.js')
-    const authRouterDests = this.destinationPath('./src/routes/authRouter.js')
+    const authRouterSrc = this.templatePath('./routers/authRouter.js')
+    const authRouterDests = this.destinationPath('./src/routers/authRouter.js')
     this.fs.copyTpl(authRouterSrc, authRouterDests)
 
 

@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema
-  .createTable('user', (jobTable)=>{
+  .createTable('users', (jobTable)=>{
     //primary key
     jobTable.increments()
 
@@ -13,5 +13,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists('user')
+  return knex.schema.dropTableIfExists('users')
 };

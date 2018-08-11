@@ -2,7 +2,7 @@
 
 A yeoman generator for buiding components for
 
-\| **n** Node \| **x** Express \| **k** Knex
+\| **n** Node \| **x** Express \| **k** Knex \|  **o** Objection
 
 projects
 
