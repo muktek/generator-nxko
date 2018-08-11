@@ -10,7 +10,7 @@ module.exports = class extends Generator  {
 
   initializing(){
     this.log('')
-    this.log('   ',chalk.bold('nxkplus generator')+' CLI Options:')
+    this.log('   ',chalk.bold('nxko generator')+' CLI Options:')
     this.log('')
     this.log(`      ${chalk.blue('$')} yo nxko:auth`)
     this.log(`      ${chalk.blue('$')} yo nxko:react`)
