@@ -8,7 +8,7 @@ module.exports = class extends Generator  {
   }
 
   initializing(){
-    this.log('nkrop - Generating Auth')
+    this.log('nxko - Generating Auth')
   }
 
   prompting(){}

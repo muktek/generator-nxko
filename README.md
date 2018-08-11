@@ -1,4 +1,4 @@
-# nxkplus
+# nxko
 
 A yeoman generator for buiding components for
 
@@ -12,18 +12,19 @@ projects
 
   ```sh
   npm install -g yo
-  npm install -g generator-nxkplus
+  npm install -g generator-nxko
   ```
 
 2. Run the nxplus generator to see the cli commands
   ```sh
-  yo nxkplus
+  yo nxko
   ```
 
 3. Inside the root of a node project
   ```sh
-  yo nxkplus:«scaffold-command»
+  yo nxko:«scaffold-command»
   ```
+
 
 ## Scaffold Commands
 
@@ -39,9 +40,9 @@ Generates scaffolding for passport authentication
   - passport
   - passport-local
   - objective
-  - objective-password
   - cookie-session
   - cookie-parser
+  - bcryptjs
 
 - Creates the following folders + files in `src/`
 

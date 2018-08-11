@@ -1,6 +1,6 @@
 {
-  "name": "generator-nxkplus",
-  "version": "0.1.8",
+  "name": "generator-nxko",
+  "version": "0.1.0",
   "description": "yeoman generator for node, knex, objective, react, passport project",
   "main": "index.js",
   "scripts": {

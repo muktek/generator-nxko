@@ -12,8 +12,8 @@ module.exports = class extends Generator  {
     this.log('')
     this.log('   ',chalk.bold('nxkplus generator')+' CLI Options:')
     this.log('')
-    this.log(`      ${chalk.blue('$')} yo nxkplus:auth`)
-    this.log(`      ${chalk.blue('$')} yo nxkplus:react`)
+    this.log(`      ${chalk.blue('$')} yo nxko:auth`)
+    this.log(`      ${chalk.blue('$')} yo nxko:react`)
     this.log(``)
   }
 
