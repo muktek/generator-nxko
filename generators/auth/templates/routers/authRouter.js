@@ -2,13 +2,23 @@ const passport = require('passport')
 
 let Router = require('express').Router;
 let User = require('../models/User.js')
-let getUserByEmail = require('../middleware/auth--getUserByEmail.js')
-let saveNewUser = require('../middleware/auth--saveNewUser.js')
-let {
+const {
+  getUserFromDb,
+  saveNewUser,
+  updateUsername,
+  res403ForExistingUser,
+  authenticatePasswordField,
+  updateUser,
+  removeUserPasswordFromRes
+} = require('../middleware/auth--middleware.js')
+
+const {
   handleRegisterRes,
   handleCurrentAuthRes,
   handleLogoutRes,
-  handleLoginRes
+  handleLoginRes,
+  handleUpdateUserEmailRes,
+  handleUpdateUserPasswordRes
 } = require('../controllers/authController.js')
 
 // let {registerUser, getCurrentUser, logoutUser, authenticateUser } = require('../controllers/authController.js')(User)
@@ -20,12 +30,30 @@ authRouter
     handleLoginRes
   )
   .post('/register',
-    getUserByEmail,
+    getUserFromDb('email'),
+    res403ForExistingUser,
     saveNewUser,
     handleRegisterRes
   )
   .get('/current', handleCurrentAuthRes)
-  .get('/logout', handleLogoutRes)
+  .post('/logout', handleLogoutRes)
+  .put('/update/useremail',
+    getUserFromDb('updated_email'),
+    res403ForExistingUser,
+    getUserFromDb('email'),
+    authenticatePasswordField('password'),
+    updateUser('email'),
+    removeUserPasswordFromRes,
+    handleUpdateUserEmailRes
+  )
+  .put('/update/userpassword',
+    getUserFromDb('email'),
+    authenticatePasswordField('password'),
+    updateUser('password'),
+    authenticatePasswordField('updated_password'),
+    removeUserPasswordFromRes,
+    handleUpdateUserPasswordRes
+  )
 
 
 module.exports = authRouter

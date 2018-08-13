@@ -1,8 +1,13 @@
-module.exports = function _validateInput(modelInstance){
+/**
+ * Validates id,email,password
+ * @return modelInstance
+ */
+
+module.exports = function _validateModelFields(modelInstance){
   if (modelInstance.id) {
     throw new objection.ValidationError({
       id: [{
-        message: "'id' value should not be defined before insert",
+        message: "'id' value cannot defined before insert",
         keyword: null,
         params: null
       }]
@@ -14,7 +19,7 @@ module.exports = function _validateInput(modelInstance){
     throw new objection.ValidationError({
       statusCode: 401,
       id: [{
-        message: "'email' property is not a valid email",
+        message: "'email' field is not a valid email format; model cannot be savied/updated",
         keyword: null,
         params: null
       }]
@@ -25,7 +30,7 @@ module.exports = function _validateInput(modelInstance){
     throw new objection.ValidationError({
       statusCode: 401,
       id: [{
-        message: "'password' needs to have a length",
+        message: "'password' field needs to have a length greater than 0; model cannot be saved/updated",
         keyword: null,
         params: null
       }]
