@@ -1,6 +1,6 @@
 const { Model } = require('objection');
 const Password = require('../helpers/auth--objection-password.js')();
-const _validateModelFields = require('../helpers/auth--objection-validate-input.js')
+const _validateModelFields = require('../helpers/auth--objection-validateModelFields.js')
 
 
 
