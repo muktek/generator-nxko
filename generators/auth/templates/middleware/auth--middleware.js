@@ -10,7 +10,6 @@ exports.authenticatePasswordField = (pwField='password') => {
     }
 
     try {
-      console.log(req.body[pwField]);
       const isValidPassword = await user.verifyPassword(req.body[pwField] )
 
       if(!isValidPassword) return res.status(403).send('403 - Unauthorized')
@@ -26,7 +25,6 @@ exports.getUserFromDb = (bodyProperty='email')=>{
 
     return async (req, res, next) => {
       const reqBody = req.body
-      console.log(reqBody[bodyProperty]);
 
       try {
         const user = await User
