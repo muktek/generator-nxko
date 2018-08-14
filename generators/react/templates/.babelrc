@@ -5,8 +5,7 @@
       "env",
       {
         "targets" : {
-          "browsers" : "last 2 versions",
-          "chrome" : "56"
+          "browsers" : "last 2 versions"
         },
         "loose" : true,
         "modules" : false

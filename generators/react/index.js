@@ -36,16 +36,24 @@ module.exports = class extends Generator  {
 
 
   end(){
-    console.log(`   ${chalk.yellow('Completion steps:')}`)
+    console.log(`  ${chalk.yellow('Completion steps:')}`)
     console.log(``)
-    console.log(`     (1) you must execute 'res.render('reactApp.ejs')' in app.use(...) after other routes `)
+    console.log(`    (1) you must execute 'res.render('reactApp.ejs')' in app.use(...) after other routes `)
     console.log(`         after all other routes`)
     console.log(``)
-    console.log(`     (2) Write components in the './src/client/components' and import into 'App.js'`)
+    console.log(`    (2) Write components in the './src/client/components' and import into 'App.js'`)
     console.log(``)
-    console.log(`     (3) Add production build command to package.json "scripts" : `)
-    console.log(`           "build" : "node_modules/.bin/webpack -p"`)
+    console.log(`    (3) Add developement build command to package.json "scripts" : `)
     console.log(``)
+    console.log(`         "dev": "npm-run-all --parallel dev:server dev:webpack"`)
+    console.log(`         "dev:webpack": "NODE_ENV=development ./node_modules/.bin/webpack --watch"`)
+    console.log(`         "dev:server": "NODE_ENV=development nodemon server.js --watch src --watch server.js --ignore src/client"`)
+    console.log(``)
+    console.log(`    (4) Add production build command to package.json "scripts" : `)
+    console.log(``)
+    console.log(`         "build" : "NODE_ENV=production node_modules/.bin/webpack -p"`)
+    console.log(``)
+
 
   }
 

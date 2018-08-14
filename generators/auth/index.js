@@ -35,12 +35,17 @@ module.exports = class extends Generator  {
 
   end(){
     console.log('')
-    console.log(`   ${chalk.yellow('Completion steps:')}`)
+    console.log(`  ${chalk.yellow('Completion steps:')}`)
     console.log('')
-    console.log('     (1) Import  cookieSession, cookieParser, passport middleware, authRouter in server.js')
-    console.log('     (2) Configure cookieParser, cookieSession AFTER bodyParser in `server.js`')
-    console.log('     (3) Configure passport middleware AFTER cookieParser in `server.js`')
-    console.log('     (4) Add `authRouter` to express middleware  AFTER passport config in `server.js`')
+    console.log('    (1) Creat the `users` table by executing the knex migration (for the create_users_table.js file)')
+    console.log('')
+    console.log('    (2) Import cookieSession, cookieParser, passport middleware, authRouter in server.js')
+    console.log('')
+    console.log('    (3) Configure cookieParser, cookieSession AFTER bodyParser in `server.js`')
+    console.log('')
+    console.log('    (4) Configure passport middleware AFTER cookieParser in `server.js`')
+    console.log('')
+    console.log('    (5) Configure `authRouter` to handle `/auth` routes AFTER passport config in `server.js`')
     console.log('')
 
   }

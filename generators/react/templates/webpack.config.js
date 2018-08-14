@@ -16,7 +16,8 @@ const productionConfig = [
     },
     output: {
       comments: false
-    }
+    },
+    sourceMap: true
   }),
   new webpack.HashedModuleIdsPlugin(),
   new webpack.DefinePlugin({
@@ -24,13 +25,18 @@ const productionConfig = [
   })
 ]
 
+console.log(`------------------------`)
+console.log(`WEBPACK ENV : ${process.env.NODE_ENV}`)
+console.log(`------------------------`)
+
+
 module.exports = {
   context: __dirname,
   entry: "./src/client/js/App.js",
   devtool: "cheap-eveal-source-map",
   output: {
     path: `${__dirname}/public/js`,
-    filename: 'bundle.js'
+    filename: process.env.NODE_ENV === 'production' ? 'bundle.min.js' : 'bundle.js'
   },
   resolve: {
     extensions: ['.js', '.json']
@@ -47,5 +53,5 @@ module.exports = {
       }
     ]
   },
-  plugins: process.NODE_ENV === 'production' ? prodConfig : []
+  plugins: process.env.NODE_ENV === 'production' ? productionConfig : []
 }
