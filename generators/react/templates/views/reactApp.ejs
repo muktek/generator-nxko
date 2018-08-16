@@ -10,7 +10,7 @@
     <div id="app-container">
 
     </div>
-    <%- <% var envFilename = process.env.NODE_ENV === 'production' ? 'bundle.min.js' : 'bundle.js' %> %>
-    <script src="/js/<%-<%=envFilename%>%>"></script>
+    <%% var envFilename = process.env.NODE_ENV === 'production' ? 'bundle.min.js' : 'bundle.js' %>
+    <script src="/js/<%%=envFilename%>"></script>
   </body>
 </html>
